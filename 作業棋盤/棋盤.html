@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>棋盤</title>
+    <style>
+        *{
+           margin:0;
+           padding:0;
+           list-style:none;
+           font-family:'標楷體';
+           box-sizing:border-box;
+         }
+        html{
+            width:100vw;
+            height:100vh;
+        }
+        body{
+            width:100%;
+            height:100%;
+            margin:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .container{
+            width:70%;
+            height:90%;
+            /* background:red; */
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .chessboard{
+            width:700px;
+            height:700px;
+            border:solid black 1px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            position:absolute;
+            /* background:red; */
+        }
+
+        .chessboard::before{
+            content:'棋盤裡，車無輪，馬無韁，叫聲將軍提防提防';
+            font-size:2rem;
+            text-orientation: upright;
+            writing-mode:vertical-rl;
+            position:absolute;
+            color:#000;
+            width:300px;
+            height:800px;
+            left:-55%;
+            top:0;
+            bottom:0;
+            margin:auto;
+            /* background:red; */
+        }
+
+        .chessboard::after{
+            content:'圖畫裡，龍不吟，虎不嘯，小小書童';
+            font-size:2rem;
+            text-orientation: upright;
+            writing-mode:vertical-rl;
+            position:absolute;
+            color:#000;
+            width:300px;
+            height:800px;
+            right:-10%;
+            top:0;
+            bottom:0;
+            margin:auto;
+            /* background:red; */
+        }
+
+        .box{
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            align-items:center;
+            /* background:green; */
+            width:560px;
+            height:630px;
+        }
+
+        .blacktable{
+            position:relative;
+            width:560px;
+            height:280px;
+            border-spacing: 0;
+        }
+
+        .blacktable td{
+            border:#000 solid 1px;
+            width:70px;
+            height:70px;
+        } 
+
+        .blackchess{
+            display:flex ;
+            justify-content:center;
+            align-items:center;
+            border-radius:50%;
+            border:solid black 1px;
+            border-radius:50%;
+            width:50px;
+            height:50px;
+            color:black;
+            background:white;
+            font-size:2rem;
+            font-weight: 400;
+        }
+
+        .carzu1{
+            position:absolute;
+            top:-6%;
+            left:-4%;
+        }
+        .carzu2{
+            position:absolute;
+            top:65%;
+            left:-4%;
+        }
+
+        .mabao1{
+            position:absolute;
+            top:-6%;
+            left:8%;
+        }
+        .mabao2{
+            position:absolute;
+            top:40%;
+            left:8%;
+        }
+
+        .shanzu1{
+            position:absolute;
+            top:-6%;
+            left:20%;
+        }
+        .shanzu2{
+            position:absolute;
+            top:65%;
+            left:20%;
+        }
+
+        .shii1{
+            position:absolute;
+            top:-6%;
+            left:33%;
+        }
+        .shii2{
+            position:absolute;
+            top:-6%;
+            left:58%;
+        }
+
+        .jianzu1{
+            position:absolute;
+            top:-6%;
+            left:45%;
+        }
+        .jianzu2{
+            position:absolute;
+            top:65%;
+            left:45%;
+        }
+
+        .shanzu3{
+            position:absolute;
+            top:-6%;
+            right:21%;
+        }
+        .shanzu4{
+            position:absolute;
+            top:65%;
+            right:21%;
+        }
+
+        .mabao3{
+            position:absolute;
+            top:-6%;
+            right:8%;
+        }
+        .mabao4{
+            position:absolute;
+            top:40%;
+            right:8%;
+        }
+
+        .carzu3{
+            position:absolute;
+            top:-6%;
+            right:-4%;
+        }
+        .carzu4{
+            position:absolute;
+            top:65%;
+            right:-4%;
+        }
+
+        /* 楚河漢界 */
+        .river{
+            border-left: #000 solid 1px;
+            border-right: #000 solid 1px;;
+            height:70px;
+            width:560px;
+            /* background:yellow; */
+            /* text-align:center;
+            line-height:70px;
+            font-size:3rem; */
+            position:relative;
+            display:flex;
+            justify-content:space-around;
+            align-items:stretch;
+        }
+        .river::before{
+            content:'楚河';
+            position:absolute;
+            width:110px;
+            height:70px;
+            line-height:70px;
+            font-size:3rem;
+            /* background:green; */
+            right:60%;
+        }
+        .river::after{
+            content:'漢界';
+            position:absolute;
+            width:110px;
+            height:70px;
+            line-height:70px;
+            font-size:3rem;
+            /* background:purple; */
+            left:60%;
+        }
+
+        .redtable{
+            width:560px;
+            height:280px;
+            border-spacing: 0;
+            /* background:orange; */
+            position:relative;
+        }
+
+        .redtable td{
+            border:#000 solid 1px;
+            width:70px;
+            height:70px;
+        }
+
+        .redchess{
+            display:flex ;
+            justify-content:center;
+            align-items:center;
+            border:solid black 1px;
+            border-radius:50%;
+            width:50px;
+            height:50px;
+            color:red;
+            background:white;
+            font-size:2rem;
+            font-weight: 400;
+        }
+
+        .carbin1{
+            position:absolute;
+            bottom:65%;
+            right:-4%;
+        }
+
+        .carbin2{
+            position:absolute;
+            bottom:-5%;
+            right:-4%;
+        }
+
+        .mapao1{
+            position:absolute;
+            bottom:40%;
+            right:8%;
+        }
+
+        .mapao2{
+            position:absolute;
+            bottom:-5%;
+            right:8%;
+        }
+        
+        .shanbin1{
+            position:absolute;
+            bottom:65%;
+            right:21%;
+        }
+        .shanbin2{
+            position:absolute;
+            bottom:-5%;
+            right:21%;
+        }
+
+        .shi1{
+            position:absolute;
+            bottom:-5%;
+            right:59%;
+        }
+        .shi2{
+            position:absolute;
+            bottom:-5%;
+            right:34%;
+        }
+
+        .shybin1{
+            position:absolute;
+            bottom:65%;
+            right:46%;
+        }
+        .shybin2{
+            position:absolute;
+            bottom:-5%;
+            right:46%;
+        }
+
+        .shanbin3{
+            position:absolute;
+            bottom:-5%;
+            left:20%;
+        }
+        .shanbin4{
+            position:absolute;
+            bottom:65%;
+            left:20%;
+        }
+
+        .mapao3{
+            position:absolute;
+            bottom:-5%;
+            left:8%;
+        }
+        .mapao4{
+            position:absolute;
+            bottom:40%;
+            left:8%;
+        }
+
+        .carbin3{
+            position:absolute;
+            bottom:65%;
+            left:-4%;
+        }
+        .carbin4{
+            position:absolute;
+            bottom:-5%;
+            left:-4%;
+        }
+
+        /* 斜線 */
+        #slash1{
+            border:1px solid #333;  
+            line-height:120px;
+            text-indent:5px;
+            background:
+            linear-gradient(45deg, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%);
+        }
+        #slash2{
+            border:1px solid #333;  
+            line-height:120px;
+            text-indent:5px;
+            background:
+            linear-gradient(-45deg, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="chessboard">
+        
+         <div class="box">
+            
+            <table class="blacktable">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="slash1"></td>
+                        <td id="slash2"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><div class="blackchess carzu1">車</div></td>
+                        <td><div class="blackchess mabao1">馬</div></td>
+                        <td><div class="blackchess shanzu1">象</div></td>
+                        <td id="slash2"><div class="blackchess shii1">士</div></td>
+                        <td id="slash1"><div class="blackchess jianzu1">將</div></td>
+                        <td><div class="blackchess shanzu3">象</div></td>
+                        <td><div class="blackchess mabao3">馬</div></td>
+                        <td><div class="blackchess carzu3">車</div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="blackchess shii2">士</div></td>
+                        <td></td>
+                        <td ></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><div class="blackchess carzu2">卒</div></td>
+                        <td><div class="blackchess mabao2">包</div></td>
+                        <td><div class="blackchess shanzu2">卒</div></td>
+                        <td></td>
+                        <td><div class="blackchess jianzu2">卒</div></td>
+                        <td><div class="blackchess shanzu4">卒</div></td>
+                        <td><div class="blackchess mabao4">包</div></td>
+                        <td><div class="blackchess carzu4">卒</div></td>
+                    </tr>
+            </table>
+            
+            <div class="river"></div>
+            
+            <table class="redtable">
+                <tr>
+                    <td><div class="redchess shanbin1">兵</div></td>
+                    <td></td>
+                    <td><div class="redchess shanbin4">兵</div></td>
+                    <td><div class="redchess shybin1">兵</div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="redchess mapao4">炮</div></td>
+                    <td><div class="redchess carbin3">兵</div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><div class="redchess mapao1">炮</div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="redchess carbin4">俥</div></td>
+                    <td></td>
+                    <td></td>
+                    <td id="slash1"></td>
+                    <td id="slash2"></td>
+                    <td></td>
+                    <td><div class="redchess carbin1">兵</div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="redchess mapao3">傌</div></td>
+                    <td><div class="redchess shanbin3">相</div></td>
+                    <td><div class="redchess shi1">仕</div></td>
+                    <td id="slash2"><div class="redchess shybin2">帥</div></td>
+                    <td id="slash1"><div class="redchess shi2">仕</div></td>
+                    <td><div class="redchess shanbin2">相</div></td>
+                    <td><div class="redchess mapao2">傌</div></td>
+                    <td><div class="redchess carbin2">俥</div></td>
+                </tr>
+               
+            </table>
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

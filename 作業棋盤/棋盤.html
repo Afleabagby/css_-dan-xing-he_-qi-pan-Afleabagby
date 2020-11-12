@@ -371,15 +371,34 @@
             background:
             linear-gradient(-45deg, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%);
         }
+
+        .row1{
+            width:560px;
+            height:50px;
+            background:green;
+            position:absolute;
+            justify-self:flex-end;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <div class="chessboard">
-        
-         <div class="box">
+            <div class="row1">
+                <div class="blackchess carzu1">車</div>
+                <div class="blackchess mabao1">馬</div>
+                <div class="blackchess shanzu1">象</div>
+                <div class="blackchess shii1">士</div>
+                <div class="blackchess jianzu1">將</div>
+                <div class="blackchess shii2">士</div>
+                <div class="blackchess shanzu3">象</div>
+                <div class="blackchess mabao3">馬</div>
+                <div class="blackchess carzu3">車</div>
+            </div>
+         <div class="box" style="background:red;">
             
-            <table class="blacktable">
+            <table class="blacktable" >
                     <tr>
                         <td></td>
                         <td></td>
@@ -391,33 +410,37 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td><div class="blackchess carzu1">車</div></td>
-                        <td><div class="blackchess mabao1">馬</div></td>
-                        <td><div class="blackchess shanzu1">象</div></td>
-                        <td id="slash2"><div class="blackchess shii1">士</div></td>
-                        <td id="slash1"><div class="blackchess jianzu1">將</div></td>
-                        <td><div class="blackchess shanzu3">象</div></td>
-                        <td><div class="blackchess mabao3">馬</div></td>
-                        <td><div class="blackchess carzu3">車</div></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="slash2"></td>
+                        <td id="slash1"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><div class="blackchess shii2">士</div></td>
+                        <td></td>
                         <td></td>
                         <td ></td>
                         <td></td>
                     </tr>
                     <tr>
+                        <div class="blackchess mabao2">包</div>
+                        <div class="blackchess mabao4">包</div>
+                        <td></td>
+                        <td></td>
                         <td><div class="blackchess carzu2">卒</div></td>
-                        <td><div class="blackchess mabao2">包</div></td>
+                        
                         <td><div class="blackchess shanzu2">卒</div></td>
                         <td></td>
                         <td><div class="blackchess jianzu2">卒</div></td>
                         <td><div class="blackchess shanzu4">卒</div></td>
-                        <td><div class="blackchess mabao4">包</div></td>
+                        
                         <td><div class="blackchess carzu4">卒</div></td>
                     </tr>
             </table>

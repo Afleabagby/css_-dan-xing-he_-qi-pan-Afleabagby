@@ -87,28 +87,21 @@
         }
 
         .blacktable{
-            display:flex;
-            flex-direction:column;
+            /* display:flex;
+            flex-direction:row;
             justify-content:space-between;
-            align-items:center;
-            /* position:relative; */
+            align-items:center; */
+            position:relative;
             width:560px;
-            height:280px;
+            height:630px;
             border-spacing: 0;
+            border:1px solid black;
+            /* background:red; */
         }
 
-        .row1{
-            width:560px;
-            height:50px;
-            /* background:green; */
-            position:absolute;
-            top:2%;
-        }
-        .row2{
-            
-        }
+       
 
-        .blacktable td{
+        .blacktable tr td{
             border:#000 solid 1px;
             width:70px;
             height:70px;
@@ -129,108 +122,22 @@
             font-weight: 400;
         }
 
-        .carzu1{
-            position:absolute;
-            top:-6%;
-            left:-4%;
-        }
-        .carzu2{
-            position:absolute;
-            top:65%;
-            left:-4%;
-        }
-
-        .mabao1{
-            position:absolute;
-            top:-6%;
-            left:8%;
-        }
-        .mabao2{
-            position:absolute;
-            top:40%;
-            left:8%;
-        }
-
-        .shanzu1{
-            position:absolute;
-            top:-6%;
-            left:20%;
-        }
-        .shanzu2{
-            position:absolute;
-            top:65%;
-            left:20%;
-        }
-
-        .shii1{
-            position:absolute;
-            top:-6%;
-            left:33%;
-        }
-        .shii2{
-            position:absolute;
-            top:-6%;
-            left:58%;
-        }
-
-        .jianzu1{
-            position:absolute;
-            top:-6%;
-            left:45%;
-        }
-        .jianzu2{
-            position:absolute;
-            top:65%;
-            left:45%;
-        }
-
-        .shanzu3{
-            position:absolute;
-            top:-6%;
-            right:21%;
-        }
-        .shanzu4{
-            position:absolute;
-            top:65%;
-            right:21%;
-        }
-
-        .mabao3{
-            position:absolute;
-            top:-6%;
-            right:8%;
-        }
-        .mabao4{
-            position:absolute;
-            top:40%;
-            right:8%;
-        }
-
-        .carzu3{
-            position:absolute;
-            top:-6%;
-            right:-4%;
-        }
-        .carzu4{
-            position:absolute;
-            top:65%;
-            right:-4%;
-        }
+        
+        
 
         /* 楚河漢界 */
         .river{
-            border-left: #000 solid 1px;
-            border-right: #000 solid 1px;;
+            /* border:#000 solid 1px; */
+            /* border-left: #000 solid 1px;
+            border-right: #000 solid 1px;; */
             height:70px;
             width:560px;
-            /* background:yellow; */
-            /* text-align:center;
-            line-height:70px;
-            font-size:3rem; */
+            background:red;
             position:relative;
-            display:flex;
+            top:45%;
+            /* display:flex;
             justify-content:space-around;
-            align-items:stretch;
+            align-items:stretch; */
         }
         .river::before{
             content:'楚河';
@@ -253,19 +160,6 @@
             left:60%;
         }
 
-        .redtable{
-            width:560px;
-            height:280px;
-            border-spacing: 0;
-            /* background:orange; */
-            position:relative;
-        }
-
-        .redtable td{
-            border:#000 solid 1px;
-            width:70px;
-            height:70px;
-        }
 
         .redchess{
             display:flex ;
@@ -281,95 +175,7 @@
             font-weight: 400;
         }
 
-        .carbin1{
-            position:absolute;
-            bottom:65%;
-            right:-4%;
-        }
-
-        .carbin2{
-            position:absolute;
-            bottom:-5%;
-            right:-4%;
-        }
-
-        .mapao1{
-            position:absolute;
-            bottom:40%;
-            right:8%;
-        }
-
-        .mapao2{
-            position:absolute;
-            bottom:-5%;
-            right:8%;
-        }
         
-        .shanbin1{
-            position:absolute;
-            bottom:65%;
-            right:21%;
-        }
-        .shanbin2{
-            position:absolute;
-            bottom:-5%;
-            right:21%;
-        }
-
-        .shi1{
-            position:absolute;
-            bottom:-5%;
-            right:59%;
-        }
-        .shi2{
-            position:absolute;
-            bottom:-5%;
-            right:34%;
-        }
-
-        .shybin1{
-            position:absolute;
-            bottom:65%;
-            right:46%;
-        }
-        .shybin2{
-            position:absolute;
-            bottom:-5%;
-            right:46%;
-        }
-
-        .shanbin3{
-            position:absolute;
-            bottom:-5%;
-            left:20%;
-        }
-        .shanbin4{
-            position:absolute;
-            bottom:65%;
-            left:20%;
-        }
-
-        .mapao3{
-            position:absolute;
-            bottom:-5%;
-            left:8%;
-        }
-        .mapao4{
-            position:absolute;
-            bottom:40%;
-            left:8%;
-        }
-
-        .carbin3{
-            position:absolute;
-            bottom:65%;
-            left:-4%;
-        }
-        .carbin4{
-            position:absolute;
-            bottom:-5%;
-            left:-4%;
-        }
 
         /* 斜線 */
         #slash1{
@@ -387,7 +193,69 @@
             linear-gradient(-45deg, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%);
         }
 
+        /* 棋子 */
+        .row1{
+            width:600px;
+            height:50px;
+            /* background:green; */
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            position:absolute;
+            top:2%;
+        }
+        .row2{
+            width:480px;
+            height:50px;
+            /* background:green; */
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            position:absolute;
+            top:22%;
+        }
 
+        .row3{
+            width:600px;
+            height:50px;
+            /* background:green; */
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            position:absolute;
+            top:32%;
+        }
+
+        .row4{
+            width:600px;
+            height:50px;
+            /* background:green; */
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            position:absolute;
+            bottom:31%;
+        }
+        .row5{
+            width:480px;
+            height:50px;
+            /* background:green; */
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            position:absolute;
+            bottom:21%;
+        }
+        .row6{
+            width:600px;
+            height:50px;
+            /* background:green; */
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            position:absolute;
+            bottom:2%;
+        }
         
 
     </style>
@@ -397,17 +265,8 @@
     <div class="chessboard">
          <div class="box">
             <table class="blacktable" >
-                <div class="row1">
-                    <div class="blackchess carzu1">車</div>
-                    <div class="blackchess mabao1">馬</div>
-                    <div class="blackchess shanzu1">象</div>
-                    <div class="blackchess shii1">士</div>
-                    <div class="blackchess jianzu1">將</div>
-                    <div class="blackchess shii2">士</div>
-                    <div class="blackchess shanzu3">象</div>
-                    <div class="blackchess mabao3">馬</div>
-                    <div class="blackchess carzu3">車</div>
-                </div>
+                <div class="river"></div>
+           
                     <tr>
                         <td></td>
                         <td></td>
@@ -439,68 +298,110 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <div class="blackchess mabao2">包</div>
-                        <div class="blackchess mabao4">包</div>
                         <td></td>
                         <td></td>
-                        <td><div class="blackchess carzu2">卒</div></td>
-                        
-                        <td><div class="blackchess shanzu2">卒</div></td>
                         <td></td>
-                        <td><div class="blackchess jianzu2">卒</div></td>
-                        <td><div class="blackchess shanzu4">卒</div></td>
-                        
-                        <td><div class="blackchess carzu4">卒</div></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-            </table>
-            
-            <div class="river"></div>
-            
-            <table class="redtable">
-                <tr>
-                    <td><div class="redchess shanbin1">兵</div></td>
+                   <tr>
+                       
+                   </tr>
+                
+                   <tr>
                     <td></td>
-                    <td><div class="redchess shanbin4">兵</div></td>
-                    <td><div class="redchess shybin1">兵</div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><div class="redchess mapao4">炮</div></td>
-                    <td><div class="redchess carbin3">兵</div></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><div class="redchess mapao1">炮</div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><div class="redchess carbin4">俥</div></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td id="slash1"></td>
                     <td id="slash2"></td>
                     <td></td>
-                    <td><div class="redchess carbin1">兵</div></td>
+                    <td></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><div class="redchess mapao3">傌</div></td>
-                    <td><div class="redchess shanbin3">相</div></td>
-                    <td><div class="redchess shi1">仕</div></td>
-                    <td id="slash2"><div class="redchess shybin2">帥</div></td>
-                    <td id="slash1"><div class="redchess shi2">仕</div></td>
-                    <td><div class="redchess shanbin2">相</div></td>
-                    <td><div class="redchess mapao2">傌</div></td>
-                    <td><div class="redchess carbin2">俥</div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="slash2"></td>
+                    <td id="slash1"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                
             </table>
-            
-        </div>
+
+             <div class="row1">
+                <div class="blackchess">車</div>
+                <div class="blackchess">馬</div>
+                <div class="blackchess">象</div>
+                <div class="blackchess">士</div>
+                <div class="blackchess">將</div>
+                <div class="blackchess">士</div>
+                <div class="blackchess">象</div>
+                <div class="blackchess">馬</div>
+                <div class="blackchess">車</div>
+            </div>
+            <div class="row2">
+                <div class="blackchess">包</div>
+                <div class="blackchess">包</div>
+            </div>
+           <div class="row3">
+                <div class="blackchess">卒</div>
+                <div class="blackchess ">卒</div>
+                <div class="blackchess ">卒</div>
+                <div class="blackchess ">卒</div>
+                <div class="blackchess">卒</div>
+            </div>
+
+            <div class="row4">
+                <div class="redchess">兵</div>
+                    <div class="redchess">兵</div>
+                    <div class="redchess">兵</div>
+                    <div class="redchess">兵</div>
+                    <div class="redchess">兵</div>
+            </div>
+
+            <div class="row5">
+                <div class="redchess">炮</div>
+                <div class="redchess">炮</div>
+            </div>
+
+          <div class="row6">
+                <div class="redchess">俥</div>
+                <div class="redchess">傌</div>
+                <div class="redchess">相</div>
+                <div class="redchess">仕</div>
+                <div class="redchess">帥</div>
+                <div class="redchess">仕</div>
+                <div class="redchess">相</div>
+                <div class="redchess">傌</div>
+                <div class="redchess">俥</div>
+            </div>
+        </div> 
     </div>
 </div>
 </body>

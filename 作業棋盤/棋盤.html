@@ -87,10 +87,25 @@
         }
 
         .blacktable{
-            position:relative;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            align-items:center;
+            /* position:relative; */
             width:560px;
             height:280px;
             border-spacing: 0;
+        }
+
+        .row1{
+            width:560px;
+            height:50px;
+            /* background:green; */
+            position:absolute;
+            top:2%;
+        }
+        .row2{
+            
         }
 
         .blacktable td{
@@ -372,33 +387,27 @@
             linear-gradient(-45deg, transparent 49.5%, black 49.5%, black 50.5%, transparent 50.5%);
         }
 
-        .row1{
-            width:560px;
-            height:50px;
-            background:green;
-            position:absolute;
-            justify-self:start;
-        }
+
+        
 
     </style>
 </head>
 <body>
 <div class="container">
     <div class="chessboard">
-        <div class="row1">
-            <div class="blackchess carzu1">車</div>
-            <div class="blackchess mabao1">馬</div>
-            <div class="blackchess shanzu1">象</div>
-            <div class="blackchess shii1">士</div>
-            <div class="blackchess jianzu1">將</div>
-            <div class="blackchess shii2">士</div>
-            <div class="blackchess shanzu3">象</div>
-            <div class="blackchess mabao3">馬</div>
-            <div class="blackchess carzu3">車</div>
-        </div>
-         <div class="box" style="background:red;">
-           
+         <div class="box">
             <table class="blacktable" >
+                <div class="row1">
+                    <div class="blackchess carzu1">車</div>
+                    <div class="blackchess mabao1">馬</div>
+                    <div class="blackchess shanzu1">象</div>
+                    <div class="blackchess shii1">士</div>
+                    <div class="blackchess jianzu1">將</div>
+                    <div class="blackchess shii2">士</div>
+                    <div class="blackchess shanzu3">象</div>
+                    <div class="blackchess mabao3">馬</div>
+                    <div class="blackchess carzu3">車</div>
+                </div>
                     <tr>
                         <td></td>
                         <td></td>
